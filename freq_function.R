@@ -49,10 +49,11 @@ MI <- vector(length=length(F))
 result <- data.frame(collocations, Dice, Jaccard, Cosine, Simpson, MI); result
 
 for(i in 1:length(F)){
-  result[i,] <- freq_test(F[i], X, Y[i], N)
+  result[i,2:6] <- freq_test(F[i], X, Y[i], N)
 }
 
 result
+
 #参考文献
 ## Gries, Stefan Th. 2013. Statistics for Linguistics with R. 2nd edition. Berlin/Boston: Walter De Gruyer.
 ## 石川慎一郎. 2012. 『ベーシックコーパス言語学』東京: ひつじ書房.
