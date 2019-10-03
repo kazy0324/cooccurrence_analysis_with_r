@@ -35,8 +35,6 @@ house <- 42871
 hair <- 13833
 Y <- c(woman, place, countryside, day, house, hair); Y
 
-#freq_test(collocation = 199, x = 8259, y = 57306, n= 96263399)
-
 # 保存用のベクトルの生成 (cf. Gries 2013: 96)
 collocations <- c("beautiful woman", "beautiful place", "beautiful countryside", "beautiful day", "beautiful house", "beautiful hair")
 Dice <- vector(length=length(F))
@@ -50,6 +48,8 @@ result <- data.frame(collocations, Dice, Jaccard, Cosine, Simpson, MI); result
 
 for(i in 1:length(F)){
   result[i,2:6] <- freq_test(F[i], X, Y[i], N)
+  ## 小数点3桁で表示したい場合はこちらを使う
+  #result[i,2:6] <- round(freq_test(F[i], X, Y[i], N), digits = 3)
 }
 
 result
